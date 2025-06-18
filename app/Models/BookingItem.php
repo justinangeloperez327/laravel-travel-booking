@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class BookingItem extends Model
 {
@@ -14,7 +14,7 @@ class BookingItem extends Model
         'item_type',
         'item_id',
         'quantity',
-        'price'
+        'price',
     ];
 
     public function booking()

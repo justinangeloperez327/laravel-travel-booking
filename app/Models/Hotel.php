@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Hotel extends Model
 {
@@ -14,7 +14,7 @@ class Hotel extends Model
         'description',
         'location_id',
         'address',
-        'star_rating'
+        'star_rating',
     ];
 
     public function location()

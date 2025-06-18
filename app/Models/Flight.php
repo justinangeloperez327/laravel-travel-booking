@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Flight extends Model
 {
@@ -17,7 +17,7 @@ class Flight extends Model
         'departure_time',
         'arrival_time',
         'base_price',
-        'seats_available'
+        'seats_available',
     ];
 
     public function origin()

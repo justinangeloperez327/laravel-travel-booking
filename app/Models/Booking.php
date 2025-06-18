@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'user_id',
         'status',
         'total_amount',
         'currency_id',
-        'booked_at'
+        'booked_at',
     ];
 
     public function user()

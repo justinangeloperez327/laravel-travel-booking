@@ -20,7 +20,7 @@ class HotelFactory extends Factory
         $location = Location::factory()->create();
 
         return [
-            'name' => $this->faker->company() . ' Hotel',
+            'name' => $this->faker->company().' Hotel',
             'description' => $this->faker->paragraph(),
             'location_id' => $location->id,
             'address' => $this->faker->address(),

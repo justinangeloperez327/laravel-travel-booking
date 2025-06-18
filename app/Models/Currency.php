@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Currency extends Model
 {
@@ -12,7 +12,7 @@ class Currency extends Model
     protected $fillable = [
         'code',
         'name',
-        'exchange_rate'
+        'exchange_rate',
     ];
 
     public function bookings()
