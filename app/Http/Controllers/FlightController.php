@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFlightRequest;
-use App\Http\Requests\UpdateFlightRequest;
+use Inertia\Inertia;
 use App\Models\Flight;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+use App\Http\Requests\StoreFlightRequest;
+use App\Http\Requests\UpdateFlightRequest;
 
 class FlightController extends Controller
 {
@@ -16,7 +16,7 @@ class FlightController extends Controller
 
         if ($search = $request->input('search')) {
             $query->where('flight_number', 'like', "%$search%")
-                ->orWhere('airline', 'like', "%$search%");
+                  ->orWhere('airline', 'like', "%$search%");
         }
 
         $flights = $query->orderByDesc('departure_time')->paginate(15);
@@ -25,20 +25,20 @@ class FlightController extends Controller
             'flights' => $flights,
             'filters' => [
                 'search' => $search,
-            ],
+            ]
         ]);
     }
 
     public function show(Flight $flight)
     {
-        return Inertia::render('flights/Show', [
+        return Inertia::render('flights/show', [
             'flight' => $flight,
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('flights/Create');
+        return Inertia::render('flights/create');
     }
 
     public function store(StoreFlightRequest $request)
@@ -50,7 +50,7 @@ class FlightController extends Controller
 
     public function edit(Flight $flight)
     {
-        return Inertia::render('flights/Edit', [
+        return Inertia::render('flights/edit', [
             'flight' => $flight,
         ]);
     }
